@@ -1,0 +1,38 @@
+/*
+ * NPC Tweak 'Anomen' component.
+ * Override script for g3osmsgr.cre - the messenger who wants Ano's stuff
+ * back (for his dad).
+ * Code thanks to CamDawg.
+ * For copyright info, see the file "COPYING". 
+ */
+
+IF
+	!PartyHasItem("ANOHELM")
+	!PartyHasItem("NPSHLD")
+THEN
+RESPONSE #100
+	EscapeArea()
+END
+
+IF
+	Global("G3GuardSpawn","LOCALS",0)
+THEN
+RESPONSE #100
+	SetGlobal("G3GuardSpawn","LOCALS",1)
+	CreateCreature("g3osamng",[-1.-1],0)
+END
+
+IF
+	See([PC])
+	NumTimesTalkedTo(0)
+THEN
+RESPONSE #100
+	Dialogue([PC])
+END
+
+IF
+	!See([PC])
+THEN
+RESPONSE #100
+	MoveToObject([PC])
+END

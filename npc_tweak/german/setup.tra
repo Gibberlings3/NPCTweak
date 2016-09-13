@@ -1,0 +1,29 @@
+@0    = ~Anomen~
+@1    = ~Familienhelm der Delryns~
+@2    = ~Familienhelm der Delryns
+Dieser Helm, ürsprünglich eine Gabe Herzog Marnaks III. an Hittorin de'Elryn als Belohnung für seinen heldenhaften Kampf gegen den Usurpator Carragon von Macken, gehört zum historischen Familienerbe Anomens. Er befindet sich schon seit langem im Besitz der Familie und kann nur von denen getragen werden, die ihre unbedingte Treue zur Blutlinie der Delryns nachweisen können. Der Träger des Helmes verfügt über Infravision (40m Reichweite) und wird von derselben Gewandheit und Harmonie erfüllt, die einstmals der legendäre Hittorint an den Tag legte. Des weiteren ist der Träger in der Lage, einmal täglich ein Geisterschwert herbeizurufen, welches als +3 Waffe speziell gegen Untote wirkt.
+
+EIGENSCHAFTEN:
+
+Geschicklichkeit wird auf 15 gesetzt
+Wirkt beim tragen Infravision
+Kann einmal täglich Phantomklinge wirken
+RK-Bonus: keiner
+Schützt vor kritischen Treffern
+Gewicht: 3
+
+Kann nur von Anomen benutzt werden
+~
+@3    = ~Anomens Rüstung~
+@4    = ~Anomens Rüstung
+
+Sir Anomen, Ritter vom Orden des Strahlenden Herzens, erhielt diese Rüstung als Gabe seines Gottes Torm. Dieser Panzer schützt Sir Anomen vor den lebenskraftentziehenden Angriffen Untoter. Einmal am Tag ist sie in der Lage, die Kräfte des Gottes zu kanalisieren und einen machtvollen Sonnenstrahl auf ihre Feinde zu schleudern.
+
+      EIGENSCHAFTEN:
+      Rüstungsklasse: -1
+      Träger ist vor Magie der negativen Ebene geschützt.
+      Kann einmal täglich Sonnenstrahl wirken.~
+
+@10   = ~Cernd~
+@11   = ~Nalia~
+@12   = ~Imoen~

@@ -1,0 +1,22 @@
+/*
+ * NPC Tweak 'Anomen' component.
+ * Override script for g3osamng.cre - the guard of the messenger who takes 
+ * Anomen's stuff back to the Household that Cor Wrecked.
+ * Code thanks to CamDawg.
+ * For copyright info, see the file "COPYING". 
+ */
+
+IF
+	!PartyHasItem("ANOHELM")
+	!PartyHasItem("NPSHLD")
+THEN
+RESPONSE #100
+	EscapeArea()
+END
+
+IF
+	!Range("g3osmsgr",5)
+THEN
+RESPONSE #100
+	MoveToObjectFollow("g3osmsgr")
+END

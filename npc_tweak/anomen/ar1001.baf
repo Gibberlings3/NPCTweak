@@ -1,0 +1,17 @@
+/*
+ * NPC Tweak Anomen Component.
+ * AR1001 Extension.
+ * Take Anomen's heirlooms if he isn't killing Saerk, and is at home.
+ * See the file COPYING for copyright and licensing information.
+ */
+
+IF
+	OR(2)
+		PartyHasItem("ANOHELM")
+		PartyHasItem("NPSHLD")
+	GlobalGT("AnomenDecide", "GLOBAL", 2) // We're not killing Saerk
+THEN
+RESPONSE #100
+	TakePartyItemAll("ANOHELM")
+	TakePartyItemAll("NPSHLD")
+END

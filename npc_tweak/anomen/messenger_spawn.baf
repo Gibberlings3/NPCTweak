@@ -1,0 +1,19 @@
+/*
+ * NPC Tweak 'Anomen' component.
+ * Script to spawn the messenger who wants Ano's stuff back (for his dad).
+ * Appended area scripts for outdoor areas in Athkatla.
+ * Code thanks to CamDawg.
+ * For copyright info, see the file "COPYING". 
+ */
+
+IF
+	GlobalGT("AnomenDecide","GLOBAL", 2) // Not killing Saerk
+	OR(2)
+		PartyHasItem("ANOHELM")
+		PartyHasItem("NPSHLD")
+	!GlobalTimerNotExpired("G3OSTakeStuff","MYAREA")
+THEN
+RESPONSE #100
+	CreateCreatureOffScreen("g3osmsgr", 0)
+	SetGlobalTimer("G3OSTakeStuff","MYAREA", 3600)
+END

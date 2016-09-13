@@ -1,0 +1,118 @@
+/*
+ *  NPCTweak mod by Orions_Stardom and andrewas.
+ *  Changes various aspects of BG2 NPCs.
+ *  For copyright info, see the file "COPYING" 
+ */
+
+BACKUP ~npc_tweak/backup~
+
+AUTHOR ~maguswizardo@gmail.com~
+
+// MODDER
+
+NO_IF_EVAL_BUG
+
+VERSION ~v5~
+
+README ~npc_tweak/readme-npc_tweak.html~
+
+/* Language Settings */
+LANGUAGE ~English~ ~English~ ~npc_tweak/english/setup.tra~
+LANGUAGE ~Français (by Graoumf)~ ~French~ ~npc_tweak/french/setup.tra~
+LANGUAGE ~German (by Telperion)~ ~German~ ~npc_tweak/german/setup.tra~
+LANGUAGE ~Español (by Saemon)~ ~Spanish~ ~npc_tweak/spanish/setup.tra~
+LANGUAGE ~Russian (Aerie.ru. Updated by Prowler)~ ~Russian~ ~npc_tweak/russian/setup.tra~
+
+/* Anomen */
+BEGIN @0
+	/* Bring the new items into existance. */
+	COPY ~npc_tweak/Anomen/anohelm.itm~ ~override/anohelm.itm~
+		SAY NAME2 @1 // Delryn Family Helmet
+		SAY IDENTIFIED_DESC @2 // Passed down through all these people.
+
+	COPY ~npc_tweak/Anomen/anoplat.itm~ ~override/anoplat.itm~
+		SAY NAME2 @3 // Anomen's Armour
+		SAY IDENTIFIED_DESC @4 // Granted to Ano for being a knight.
+
+	/* Give Anomen his new helmet. */
+	COPY_EXISTING_REGEXP ~anom.*cre~ ~override~
+		PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
+			ADD_CRE_ITEM ~anohelm~ #0 #0 #0 ~IDENTIFIED~ ~helmet~
+		END
+	BUT_ONLY_IF_IT_CHANGES // It probably will, but this looks nice.
+
+	/* And take it back off him. */
+	EXTEND_BOTTOM ~AR1001.bcs~ ~npc_tweak/Anomen/AR1001.baf~
+	COPY_EXISTING ~kprunn01.cre~ ~override/g3osmsgr.cre~ // messenger
+	              ~amng1.cre~    ~override/g3osamng.cre~ // guard
+		PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
+			WRITE_EVALUATED_ASCII 0x248 ~%DEST_RES%~ #8 // override script
+			WRITE_EVALUATED_ASCII 0x280 ~%DEST_RES%~ #32
+			WRITE_EVALUATED_ASCII 0x2cc ~%DEST_RES%~ #8
+		END
+	BUT_ONLY_IF_IT_CHANGES	
+
+	COMPILE	~npc_tweak/Anomen/AnoStuff.d~
+	        ~npc_tweak/Anomen/g3osmsgr.baf~
+	        ~npc_tweak/Anomen/g3osamng.baf~
+	      
+	EXTEND_BOTTOM_REGEXP ~AR0[2-5]00.bcs~ ~npc_tweak/Anomen/messenger_spawn.baf~
+	EXTEND_BOTTOM_REGEXP ~AR0[7-9]00.bcs~ ~npc_tweak/Anomen/messenger_spawn.baf~
+	EXTEND_BOTTOM        ~AR1000.bcs~     ~npc_tweak/Anomen/messenger_spawn.baf~
+	
+	/* NPC Kit Pack compatibility, contributed by CamDawg */	
+	ACTION_IF FILE_EXISTS_IN_GAME ~ikitano1.spl~ THEN BEGIN
+		/* Make platemail usable by Helmites */
+		COPY_EXISTING ~anoplat.itm~ ~override~
+		 	PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+				READ_BYTE  0x29 "use"
+				WRITE_BYTE 0x29 ("%use%" BAND 0xFD)
+			END
+		BUT_ONLY_IF_IT_CHANGES
+	END
+
+	ACTION_IF FILE_EXISTS_IN_GAME ~ikitano2.spl~ THEN BEGIN
+		/* Make helm usable by beserkers. */
+		COPY_EXISTING ~anohelm.itm~ ~override~
+ 		 PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+ 			READ_BYTE  0x2f "use"
+			WRITE_BYTE 0x2f ("%use%" BAND 0xFE)		   
+ 		 END
+		BUT_ONLY_IF_IT_CHANGES
+	END
+	/* End of NPC Kit Pack compatibilty */
+	
+/* Cernd */
+BEGIN @10
+	COPY_EXISTING_REGEXP ~cernd.*cre~ ~override~
+		PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
+			WRITE_BYTE 0x0244 00
+			WRITE_BYTE 0x0245 08
+			WRITE_BYTE 0x0246 00
+			WRITE_BYTE 0x0247 00
+		END
+	BUT_ONLY_IF_IT_CHANGES	
+	COPY_EXISTING ~npstaf.itm~ ~override/npstaf.itm~
+	              ~npclck.itm~ ~override/npclck.itm~
+		PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+			WRITE_BYTE 0x2b 255
+			WRITE_BYTE 0x2d 255
+			WRITE_BYTE 0x2f 255
+			WRITE_BYTE 0x29 247
+ 		END
+	BUT_ONLY_IF_IT_CHANGES
+	
+/* Nalia */
+BEGIN @11
+	COPY_EXISTING_REGEXP ~nalia.*cre~ ~override~
+		PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
+			WRITE_BYTE 0x0045 40
+			WRITE_BYTE 0x0067 60
+			WRITE_BYTE 0x0069 15
+			WRITE_BYTE 0x006a 0
+		END
+	BUT_ONLY_IF_IT_CHANGES
+
+/* end of file */
+
+	
