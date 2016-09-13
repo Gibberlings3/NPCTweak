@@ -12,7 +12,7 @@ AUTHOR ~maguswizardo@gmail.com~
 
 NO_IF_EVAL_BUG
 
-VERSION ~v5~
+VERSION ~v5.1~
 
 README ~npc_tweak/readme-npc_tweak.html~
 
@@ -22,6 +22,7 @@ LANGUAGE ~Français (by Graoumf)~ ~French~ ~npc_tweak/french/setup.tra~
 LANGUAGE ~German (by Telperion)~ ~German~ ~npc_tweak/german/setup.tra~
 LANGUAGE ~Español (by Saemon)~ ~Spanish~ ~npc_tweak/spanish/setup.tra~
 LANGUAGE ~Russian (Aerie.ru. Updated by Prowler)~ ~Russian~ ~npc_tweak/russian/setup.tra~
+LANGUAGE ~Polish (by Cahir)~ ~Polish~ ~npc_tweak/polish/setup.tra~
 
 /* Anomen */
 BEGIN @0
