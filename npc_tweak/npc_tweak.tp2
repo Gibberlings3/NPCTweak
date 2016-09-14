@@ -17,12 +17,41 @@ VERSION ~v5.1~
 README ~npc_tweak/readme-npc_tweak.html~
 
 /* Language Settings */
-LANGUAGE ~English~ ~english~ ~npc_tweak/languages/english/setup.tra~
-LANGUAGE ~Français (by Graoumf)~ ~french~ ~npc_tweak/languages/french/setup.tra~
-LANGUAGE ~German (by Telperion)~ ~german~ ~npc_tweak/languages/german/setup.tra~
-LANGUAGE ~Español (by Saemon)~ ~spanish~ ~npc_tweak/languages/spanish/setup.tra~
-LANGUAGE ~Russian (Aerie.ru. Updated by Prowler)~ ~russian~ ~npc_tweak/languages/russian/setup.tra~
-LANGUAGE ~Polish (by Cahir)~ ~polish~ ~npc_tweak/languages/polish/setup.tra~
+
+LANGUAGE
+ ~English~
+ ~english~
+ ~npc_tweak/languages/english/setup.tra~
+
+LANGUAGE
+ ~Français (by Graoumf)~
+ ~french~
+ ~npc_tweak/languages/english/setup.tra~
+ ~npc_tweak/languages/french/setup.tra~
+ 
+LANGUAGE
+ ~German (by Telperion)~
+ ~german~
+ ~npc_tweak/languages/english/setup.tra~
+ ~npc_tweak/languages/german/setup.tra~
+ 
+LANGUAGE
+ ~Español (by Saemon)~
+ ~spanish~
+ ~npc_tweak/languages/english/setup.tra~
+ ~npc_tweak/languages/spanish/setup.tra~
+ 
+LANGUAGE
+ ~Russian (Aerie.ru. Updated by Prowler)~
+ ~russian~
+ ~npc_tweak/languages/english/setup.tra~
+ ~npc_tweak/languages/russian/setup.tra~
+ 
+LANGUAGE
+ ~Polish (by Cahir)~
+ ~polish~
+ ~npc_tweak/languages/english/setup.tra~
+ ~npc_tweak/languages/polish/setup.tra~
 
 /* Anomen */
 BEGIN @0
