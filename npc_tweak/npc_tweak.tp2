@@ -8,9 +8,18 @@ BACKUP ~npc_tweak/backup~
 
 AUTHOR ~maguswizardo@gmail.com~
 
-// MODDER
-
-NO_IF_EVAL_BUG
+ALWAYS
+  // This ALWAYS/ACTION_IF combo will convert charsets for use on EE games.
+  ACTION_IF NOT VARIABLE_IS_SET cd_always THEN BEGIN
+    OUTER_SET cd_always = 1
+    
+    ACTION_DEFINE_ARRAY cdnoconvert BEGIN setup END // List of tra files that contain ONLY strings for the WeiDU installer and NOT game content
+    ACTION_DEFINE_ARRAY cdreload BEGIN game END // List of tra files that need to be reloaded after conversion because they were previously loaded in the LANGUAGE section
+    
+    // On EE games, convert game content tra files to utf-8 so that games don't crash when encountering international characters.
+    LAF HANDLE_CHARSETS INT_VAR infer_charset = 1 STR_VAR tra_path = EVAL ~%MOD_FOLDER%/languages~ noconvert_array = cdnoconvert reload_array = cdreload  END
+  END
+END
 
 VERSION ~v5.1~
 
