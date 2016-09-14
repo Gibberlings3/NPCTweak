@@ -22,39 +22,50 @@ LANGUAGE
  ~English~
  ~english~
  ~npc_tweak/languages/english/setup.tra~
+ ~npc_tweak/languages/english/game.tra~
 
 LANGUAGE
  ~Français (by Graoumf)~
  ~french~
  ~npc_tweak/languages/english/setup.tra~
  ~npc_tweak/languages/french/setup.tra~
+ ~npc_tweak/languages/english/game.tra~
+ ~npc_tweak/languages/french/game.tra~
  
 LANGUAGE
  ~German (by Telperion)~
  ~german~
  ~npc_tweak/languages/english/setup.tra~
  ~npc_tweak/languages/german/setup.tra~
+ ~npc_tweak/languages/english/game.tra~
+ ~npc_tweak/languages/german/game.tra~
  
 LANGUAGE
  ~Español (by Saemon)~
  ~spanish~
  ~npc_tweak/languages/english/setup.tra~
  ~npc_tweak/languages/spanish/setup.tra~
+ ~npc_tweak/languages/english/game.tra~
+ ~npc_tweak/languages/spanish/game.tra~
  
 LANGUAGE
  ~Russian (Aerie.ru. Updated by Prowler)~
  ~russian~
  ~npc_tweak/languages/english/setup.tra~
  ~npc_tweak/languages/russian/setup.tra~
+ ~npc_tweak/languages/english/game.tra~
+ ~npc_tweak/languages/russian/game.tra~
  
 LANGUAGE
  ~Polish (by Cahir)~
  ~polish~
  ~npc_tweak/languages/english/setup.tra~
  ~npc_tweak/languages/polish/setup.tra~
+ ~npc_tweak/languages/english/game.tra~
+ ~npc_tweak/languages/polish/game.tra~
 
 /* Anomen */
-BEGIN @0
+BEGIN @1000
 	/* Bring the new items into existance. */
 	COPY ~npc_tweak/Anomen/anohelm.itm~ ~override/anohelm.itm~
 		SAY NAME2 @1 // Delryn Family Helmet
@@ -113,7 +124,7 @@ BEGIN @0
 	/* End of NPC Kit Pack compatibilty */
 	
 /* Cernd */
-BEGIN @10
+BEGIN @1010
 	COPY_EXISTING_REGEXP ~cernd.*cre~ ~override~
 		PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
 			WRITE_BYTE 0x0244 00
@@ -133,7 +144,7 @@ BEGIN @10
 	BUT_ONLY_IF_IT_CHANGES
 	
 /* Nalia */
-BEGIN @11
+BEGIN @1020
 	COPY_EXISTING_REGEXP ~nalia.*cre~ ~override~
 		PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
 			WRITE_BYTE 0x0045 40

@@ -1,0 +1,23 @@
+@1 = ~Casco de la familia Delryn~
+@2 = ~Casco de la familia Delryn
+Una de las posesiones más preciadas de Anomen, este casco fue originalmente un presente para Hittorin de'Elryn del Duque Marnak III, como recompensa por su valerosa actuación contra el usurpador en potencia Carragon de Macken. Desde entonces, el casco ha pasado de generación en generación, y sólo pueden llevarlo los descendientes que demuestren una lealtad verdadera hacia la familia Delryn. Este casco concede infravisión (hasta 36 metros) al portador, quien también experimentará las mismas agilidad y coordinación de las que gozó el propio Hittorin. Además, el portador del casco puede convocar una vez al día una espada fantasmal, que golpea como un arma +3 y hace un daño adicional a los muertos vivientes.
+
+ESTADÍSTICAS:
+
+Destreza definida en 15
+Concede Infravisión al equiparse
+Puede lanzar Filo Fantasmal una vez al día
+Bonificador a la Clase de Armadura: Ninguno
+Especial: Protege contra golpes críticos
+Peso: 3
+
+Sólo permitida a: Anomen~
+@3 = ~Armadura de Anomen~
+@4 = ~Armadura de Anomen
+
+Sir Anomen, Caballero del Radiante Corazón, ha obtenido este obsequio del dios Torm. Esta poderosa armadura protege a Sir Anomen de los ataques drenadores de vida de los muertos vivientes. Una vez al día, puede canalizar la furia del dios a través de ella, creando un destructor rayo de luz que hiere a todos los enemigos de quien la viste.
+
+ESTADÍSTICAS:
+Clase de Armadura: -1
+Protección contra el Plano Negativo al equiparse
+Puede lanzar Rayo Solar una vez al día~
