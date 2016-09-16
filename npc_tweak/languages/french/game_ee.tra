@@ -1,0 +1,20 @@
+@2 = ~Heaume de la Famille Delryn
+L'un des biens les plus chers d'Anomen, ce casque fût initialement offert à Hittorin de'Elryn par le duc Marnak III, en récompense de sa bravoure face à l'usurpateur Carragon de Macken. Il est transmis depuis, de génération en génération, et ne peut être porté que par les descendants ayant prouvé leur loyauté indéfectible à la maison Delryn. Se coiffer de ce casque confère au porteur l'Infravision (jusqu'à une distance de 36 mètres), et lui procure les mêmes qualités de souplesse et de coordination dont bénéficiaient Hittorin lui-même. De plus, le porteur a la possibilité de créer une épée spectrale une fois par jour, qui se comporte comme une arme +3 particulièrement dévastatrice contre les Morts-Vivants.
+
+PARAMETRES :
+
+Dextérité nécessaire : 15
+Bonus à la classe d'armure : Aucun
+Confère l'Infravision lorsqu'il est équipé
+Spécial : Lame Fantôme, une fois par jour
+Spécial : Protège des coups critiques
+Poids : 1~
+@4 = ~Cuirasse d'Anomen
+
+Sir Anomen, Chevalier du Très Noble Ordre du Coeur Radieux, a reçu ce cadeau du dieu Torm. Cette puissante armure le protège des attaques de drainage causées par les morts-vivants. Une fois par jour, elle lui permet en outre d'invoquer la colère du dieu, qui se déverse alors sous la forme d'un rayon de soleil destructeur blessant tous les adversaires du porteur.
+
+PARAMETRES :
+
+Classe d'Armure : -1
+Confère Protection contre le Plan Négatif lorsqu'elle est équipée
+Spécial : Rayon de Soleil , une fois par jour.~
