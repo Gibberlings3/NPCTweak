@@ -9,7 +9,7 @@
 
 ## Notes
 
-This mod tweaks original BG2 NPCs Anomen, Cernd, and Nalia, and as such can be run on BG2, BGT, and BG2EE installs. It will have no effect on Tutu or EasyTutu games/NPCs, or on mod-added NPCs.
+This mod tweaks original BG2 NPCs Anomen, Cernd, and Nalia, and as such can be run on BG2, BGT, BG2EE, and EET installs. It will have no effect on Tutu or EasyTutu games/NPCs, or on mod-added NPCs.
 
 ## Overview
 
@@ -18,7 +18,9 @@ The NPC Tweak mod changes certain aspects of Baldur's Gate II NPCs. It hopes to 
 
 ## Compatibility
 
-This mod is designed to work with BG2EE and with the original BG2: Shadows of Amn, with or without the expansion pack Throne of Bhaal. At the time of writing, there are known problems with The Darkest Day, but no others. Please report any compatibility problems you find as bugs.
+This mod is designed to work with BG2EE and with the original BG2: Shadows of Amn, with or without the expansion pack Throne of Bhaal. It will also work with the conversions BGT and EET.
+
+At the time of writing, there are known compatibility problems with The Darkest Day, but no other mods. Please report any compatibility issues you find as bugs.
 
 ## Contents
 
