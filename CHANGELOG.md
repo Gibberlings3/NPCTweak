@@ -1,7 +1,15 @@
 # Change Log
 
-## Version 6 - September 13, 2016
+## Version 7 - September 15, 2016
+### Fixed
+- Anomen's items are now restricted to him on EE
+- Anomen's items now display proper usability information on EE
+- Anomen's armor wasn't providing its Sunray ability
+- Anomen's armor was casting Negative Plane Protection as a long-lasting spell each time it was equipped rather than providing the effects while equipped
+- Anomen's helmet wasn't providing Infravision while equipped
+- Anomen's helmet's Phantom Blade ability was using the scroll icon instead of spell icon
 
+## Version 6 - September 13, 2016
 ### Added
 - Polish translation by Cahir
 - BG2EE compatibility

@@ -17,7 +17,14 @@ ALWAYS
     ACTION_DEFINE_ARRAY cdreload BEGIN game END // List of tra files that need to be reloaded after conversion because they were previously loaded in the LANGUAGE section
     
     // On EE games, convert game content tra files to utf-8 so that games don't crash when encountering international characters.
-    LAF HANDLE_CHARSETS INT_VAR infer_charset = 1 STR_VAR tra_path = EVAL ~%MOD_FOLDER%/languages~ noconvert_array = cdnoconvert reload_array = cdreload  END
+    LAF HANDLE_CHARSETS INT_VAR infer_charset = 1 STR_VAR default_language = ~english~ tra_path = EVAL ~%MOD_FOLDER%/languages~ noconvert_array = cdnoconvert reload_array = cdreload  END
+    
+    // Load EE-specific text (usability section removed from item descriptions)
+    ACTION_IF ENGINE_IS ~bgee bg2ee~ THEN BEGIN
+      // Load English first in case some entries not available in the chosen language
+      LOAD_TRA ~npc_tweak/languages/english/game_ee.tra~
+      LOAD_TRA ~npc_tweak/languages/%LANGUAGE%/game_ee.tra~
+    END
   END
 END
 
@@ -75,15 +82,50 @@ LANGUAGE
 
 /* Anomen */
 BEGIN @1000
+	
+	DEFINE_PATCH_FUNCTION ~MAKE_USABLE_BY_ANOMEN_ON_EE~ BEGIN
+		PATCH_IF (ENGINE_IS ~bg2ee~) BEGIN
+			// add 319 effect to restrict to anomen
+			LPF ~ADD_ITEM_EQEFFECT~
+				INT_VAR
+					opcode = 319 // restrict item
+					target = 1 // self
+					timing = 2 // while equipped
+					parameter2 = 11 // actor's script name
+					power = 1 // this allows the actor to use the item rather than not use it
+					special = 9138 // ~Anomen~
+				STR_VAR
+					resource = ~ANOMEN~
+			END
+			// remove class restrictions
+			WRITE_LONG  0x1e 0 
+			// remove kit restrictions
+			WRITE_BYTE  0x29 0
+			WRITE_BYTE  0x2b 0
+			WRITE_BYTE  0x2d 0
+			WRITE_BYTE  0x2f 0
+			// remove attribute restrictions
+			WRITE_SHORT 0x26 0
+			WRITE_BYTE	0x2a 0
+			WRITE_BYTE	0x2c 0
+			WRITE_BYTE	0x2e 0
+			WRITE_BYTE	0x30 0
+			WRITE_SHORT 0x32 0
+		END
+	END
+	
 	/* Bring the new items into existance. */
 	COPY ~npc_tweak/Anomen/anohelm.itm~ ~override/anohelm.itm~
 		SAY NAME2 @1 // Delryn Family Helmet
 		SAY IDENTIFIED_DESC @2 // Passed down through all these people.
+    LPF ~MAKE_USABLE_BY_ANOMEN_ON_EE~ END
 
 	COPY ~npc_tweak/Anomen/anoplat.itm~ ~override/anoplat.itm~
 		SAY NAME2 @3 // Anomen's Armour
 		SAY IDENTIFIED_DESC @4 // Granted to Ano for being a knight.
-
+    LPF ~MAKE_USABLE_BY_ANOMEN_ON_EE~ END
+    WRITE_SHORT 0x26 15 // re-set minimum required strength
+  
 	/* Give Anomen his new helmet. */
 	COPY_EXISTING_REGEXP ~anom.*cre~ ~override~
 		PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
@@ -164,5 +206,3 @@ BEGIN @1020
 	BUT_ONLY_IF_IT_CHANGES
 
 /* end of file */
-
-	
