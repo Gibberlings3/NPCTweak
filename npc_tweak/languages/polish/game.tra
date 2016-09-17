@@ -7,18 +7,22 @@ PARAMETRY:
 Zwiêksza Zrêcznoœæ do 15 
 Obdarza nosz¹cego zdolnoœci¹ infrawizji 
 Pozwala raz dziennie rzuciæ zaklêcie Widmowe Ostrze 
-Klasa pancerza: bez zmian
+Klasa Pancerza: bez zmian
 Specjalne: Chroni przed trafieniami krytycznymi
 Waga: 3
-
-Mo¿e u¿ywaæ: Anomen
-~
+Mo¿e u¿ywaæ: 
+ Anomen~
 @3    = ~Zbroja Anomena~
 @4    = ~Zbroja Anomena
 
 Sir Anomen, Rycerz Zakonu Promiennego Serca otrzyma³ ow¹ zbrojê w darze od boga Torma. Ten potê¿ny pancerz chroni swego w³aœciciela przed wszelkimi atakami wysysaj¹cymi ¿ycie, wykonywanymi przez nieumar³ych. Ponadto, raz dziennie mo¿e wyzwoliæ bosk¹ furiê w postaci niszczycielskiego promienia œwiat³a rani¹cego ka¿dego, kto oœmieli siê zaatakowaæ nosz¹c¹ go osobê. 
 
-      PARAMETRY:
-      Klasa pancerza: -1
-      Nosz¹ca tê zbrojê osoba znajduje siê pod wp³ywem zaklêcia Ochrona przed Negatywn¹ Energi¹. 
-      Pozwala raz dziennie rzuciæ zaklêcie Promieñ S³oñca.~ 
+PARAMETRY:
+
+Klasa Pancerza: -1
+Nosz¹ca tê zbrojê osoba znajduje siê pod wp³ywem zaklêcia Ochrona przed negatywn¹ energi¹. 
+Pozwala raz dziennie rzuciæ zaklêcie Promieñ s³oñca.
+Waga: 70
+Wymagana si³a: 15
+Mo¿e u¿ywaæ: 
+ Anomen~ 
