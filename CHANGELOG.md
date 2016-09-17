@@ -6,6 +6,7 @@
 - Anomen's items now display proper usability information on EE
 - Anomen's armor wasn't providing its Sunray ability
 - Anomen's armor was casting Negative Plane Protection as a long-lasting spell each time it was equipped rather than providing the effects while equipped
+- Anomen's armor wasn't providing AC bonuses vs. types as appropriate for full plate
 - Anomen's helmet wasn't providing Infravision while equipped
 - Anomen's helmet's Phantom Blade ability was using the scroll icon instead of spell icon
 
